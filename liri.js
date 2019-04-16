@@ -23,22 +23,24 @@ switch (selector) {
         song.findSong(search);
         break;
     case "do-what-it-says":
-        fs.readFile("random.txt", "utf8", function (err,data) {
+        fs.readFile("random.txt", "utf8", function (err, data) {
             if (err) {
                 return console.log(err);
             }
             console.log(data);
             var dataArr = data.split(",");
+            var selector2 = dataArr[0];
+            var search2 = dataArr[1];
             console.log(dataArr);
-            switch (selector) {
+            switch (selector2) {
                 case "concert-this":
-                    band.findConcert(search);
+                    band.findConcert(search2);
                     break;
                 case "movie-this":
-                    movie.findMovie(search);
+                    movie.findMovie(search2);
                     break;
                 case "spotify-this-song":
-                    song.findSong(search);
+                    song.findSong(search2);
                     break;
             };
         });
