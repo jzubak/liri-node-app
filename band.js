@@ -1,6 +1,8 @@
 // node liri.js concert-this <artist/band name here>
 
 var axios = require("axios");
+var moment = require('moment');
+moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 var BAND = function() {
     this.findConcert = function(search) {
       // The following URL can be used to search the TV Maze API for a given show
@@ -14,7 +16,9 @@ var BAND = function() {
           console.log(response.data[1].venue.name);
           console.log(response.data[1].venue.city);
           console.log(response.data[1].venue.country);
-          console.log(response.data[1].datetime);
+          var time = response.data[1].datetime;
+          var timedisplay = moment(time).format("dddd, MMMM Do YYYY, h:mm:ss a");
+          console.log(timedisplay);
         }
       )
     };
