@@ -1,11 +1,10 @@
-// node liri.js concert-this <artist/band name here>
+//required node liri.js concert-this <artist/band name here>
 
 var axios = require("axios");
 var moment = require('moment');
 moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 var BAND = function() {
     this.findConcert = function(search) {
-      // The following URL can be used to search the TV Maze API for a given show
       var bandUrl = `https://rest.bandsintown.com/artists/${search}/events?app_id=codingbootcamp`
   
       axios

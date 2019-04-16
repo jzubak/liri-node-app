@@ -1,4 +1,4 @@
-//node liri.js spotify-this-song '<song name here>'
+//required node liri.js spotify-this-song '<song name here>'
 
 var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');

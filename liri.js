@@ -22,6 +22,7 @@ switch (selector) {
     case "spotify-this-song":
         song.findSong(search);
         break;
+    //required node liri.js do-what-it-says
     case "do-what-it-says":
         fs.readFile("random.txt", "utf8", function (err, data) {
             if (err) {
@@ -53,8 +54,3 @@ fs.appendFile("log.txt", `you used ${selector} to search for ${search}\n`, funct
     }
     console.log("log.txt was updated!");
 });
-
-
-
-//node liri.js do-what-it-says
-
