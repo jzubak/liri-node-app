@@ -47,7 +47,7 @@ switch (selector) {
         break
 }
 
-fs.appendFile("log.txt", `${search}\n`, function (err) {
+fs.appendFile("log.txt", `you used ${selector} to search for ${search}\n`, function (err) {
     if (err) {
         return console.log(err);
     }
