@@ -8,7 +8,10 @@ var SONGS = function () {
     this.findSong = function (search) {
         spotify.search({ type: 'track', query: search })
             .then(function (response) {
-                console.log(response);
+                console.log(response.tracks.items[0].artists[0].name);
+                console.log(response.tracks.items[0].name);
+                console.log(response.tracks.items[0].preview_url);
+                console.log(response.tracks.items[0].album.name);
             })
             .catch(function (err) {
                 console.log(err);
