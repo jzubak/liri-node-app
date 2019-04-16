@@ -11,13 +11,18 @@ var BAND = function() {
       .get(bandUrl)
       .then(
         function (response) {
-            // for (var i =0; i < response.data.length; i++)
-          console.log(response.data[1].venue.name);
-          console.log(response.data[1].venue.city);
-          console.log(response.data[1].venue.country);
-          var time = response.data[1].datetime;
+            var output = response.data
+            // var count = 0;
+            // for (var i = 0; i < output[count].length; i++){
+            console.log(`the next ${search} concert is:`)
+          console.log(output[0].venue.name);
+          console.log(response.data[0].venue.city);
+          console.log(response.data[0].venue.country);
+          var time = response.data[0].datetime;
           var timedisplay = moment(time).format("dddd, MMMM Do YYYY, h:mm:ss a");
           console.log(timedisplay);
+        //   count++
+            // };
         }
       )
     };

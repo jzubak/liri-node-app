@@ -5,19 +5,20 @@ var axios = require("axios");
 var MOVIE = function() {
   this.findMovie = function(search) {
     var movieUrl = `http://www.omdbapi.com/?t=${search}&y=&plot=short&apikey=trilogy`
-
+  
     axios
     .get(movieUrl)
     .then(
       function (response) {
-        console.log(response.data.Title)
-        console.log(response.data.Year)
-        console.log(response.data.imdbRating)
-        console.log(response.data.Ratings[2].Value)
-        console.log(response.data.Country)
-        console.log(response.data.Language)
-        console.log(response.data.Plot)
-        console.log(response.data.Actors)
+        var output = response.data
+        console.log(output.Title)
+        console.log(output.Year)
+        console.log(output.imdbRating)
+        console.log(output.Ratings[2].Value)
+        console.log(output.Country)
+        console.log(output.Language)
+        console.log(output.Plot)
+        console.log(output.Actors)
       }
     )
   };
