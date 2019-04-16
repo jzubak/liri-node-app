@@ -11,28 +11,17 @@ var movie = new MOVIE();
 var band = new BAND();
 var song = new SONGS();
  
-
-if (selector === "concert-this"){
-    console.log("Searching for Concerts ")
-    console.log("Band is " + search)
+switch(selector){
+    case "concert-this":
     band.findConcert(search);
-}
-if (selector === "movie-this"){
-    console.log("Searching for Movie");
-    console.log("Movie is " + search);
+    break;
+    case "movie-this":
     movie.findMovie(search);
-}
-if (selector === "spotify-this-song"){
-    console.log("Searching for Songs")
-    console.log("Song is " + search)
+    break;
+    case "spotify-this-song":
     song.findSong(search);
+    break;
 }
-if (selector === "do-what-it-says"){
-    console.log("Searching for Something")
-    console.log("That something is " + search)
-}
-
-
 
 fs.appendFile("log.txt", "\n" + search , function(err) {
     if (err) {
@@ -40,10 +29,6 @@ fs.appendFile("log.txt", "\n" + search , function(err) {
     }
     console.log("log.txt was updated!");
   });
-
-
-
-
 
 
 

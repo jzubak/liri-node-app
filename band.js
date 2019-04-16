@@ -10,10 +10,18 @@ var BAND = function() {
       .get(bandUrl)
       .then(
         function (response) {
-          console.log(response)
-          // console.log(response.data.name)
+            // for (var i =0; i < response.data.length; i++)
+          console.log(response.data[1].venue.name);
+          console.log(response.data[1].venue.city);
+          console.log(response.data[1].venue.country);
+          console.log(response.data[1].datetime);
         }
       )
     };
   };
 module.exports = BAND;
+
+
+// Name of the venue
+// Venue location
+// Date of the Event (use moment to format this as "MM/DD/YYYY")
